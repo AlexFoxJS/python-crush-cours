@@ -1,10 +1,18 @@
 # Перебор значений Словарей
+# favorite_languages = {
+#     'jen': 'python',
+#     'sarah': 'c++',
+#     'edward': 'ruby',
+#     'phil': 'python',
+#     'alex': 'python'
+# }
+
 favorite_languages = {
-    'jen': 'python',
-    'sarah': 'c++',
-    'edward': 'ruby',
-    'phil': 'python',
-    'alex': 'python'
+    'jen': ['python', 'ruby'],
+    'sarah': ['c'],
+    'edward': ['ruby', 'go'],
+    'phil': ['python', 'haskell'],
+    'alex': ['python', 'ecma']
 }
 
 print('')
@@ -35,5 +43,11 @@ print('')
 # print("The following languages have been mentioned:")
 # for language in set(favorite_languages.values()):
 #     print(language.title())
+
+for name, languages in favorite_languages.items():
+    print("\n" + name.title() + "'s favorite languages are:")
+
+    for language in languages:
+        print("\t" + language.title())
 
 print('')
