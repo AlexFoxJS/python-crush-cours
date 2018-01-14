@@ -1,4 +1,4 @@
-# Работа с классами и экземплярами
+# Метод __init__() класса-потомка
 class Car():
     """Простая модель автомобиля."""
     def __init__(self, make, model, year):
@@ -35,12 +35,12 @@ class Car():
         """Выводит пробег машины в милях."""
         print("This car has " + str(self.odometer_reading) + " miles on it.")
 
+class ElectroCar(Car):
+    """Представляет аспекты машины, специфические для электромобилей."""
+    def __init__(self, make, model, year):
+        """Инициализирует атрибуты класса-родителя."""
+        super().__init__(make, model, year)
 
-my_new_car = Car('audi', 'a4', 2016)
-print(my_new_car.get_descriptive_name())
 
-my_new_car.update_odometer(2350)
-my_new_car.read_odometer()
-
-my_new_car.increment_odometer(-2300)
-my_new_car.read_odometer()
+my_tesla = ElectroCar('tesla', 'model s', 2016)
+print(my_tesla.get_descriptive_name())
